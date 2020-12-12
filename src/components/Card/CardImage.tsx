@@ -1,11 +1,11 @@
 import { FunctionComponent } from "react";
 
-export interface ImageLayoutProps {
+export interface CardImageProps {
   image: string;
   alt: string;
 }
 
-export const ImageLayout: FunctionComponent<ImageLayoutProps> = ({
+export const CardImage: FunctionComponent<CardImageProps> = ({
   image,
   alt,
 }) => {

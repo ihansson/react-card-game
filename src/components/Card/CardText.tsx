@@ -1,11 +1,9 @@
 import { FunctionComponent, ReactNode } from "react";
 
-export interface TextLayoutProps {
+export interface CardTextProps {
   children: ReactNode | ReactNode[];
 }
 
-export const TextLayout: FunctionComponent<TextLayoutProps> = ({
-  children,
-}) => {
+export const CardText: FunctionComponent<CardTextProps> = ({ children }) => {
   return <div>{children}</div>;
 };

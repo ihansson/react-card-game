@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9f36aab-1990-449c-803c-08d9febb71af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CardLayouts/ImageLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CardLayouts/TextLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Stack.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Zone.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Card/Card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Stack.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/helpers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/schema.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardLayouts/ImageLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardLayouts/TextLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Stack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stack.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,27 +25,39 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lYgHl8KNa1EYwkYc2kuxrf51mm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Yarn/config/global/node_modules/prettier" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/game/reducer.ts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\ian\AppData\Local\Yarn\config\global\node_modules\prettier" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="C:\Users\ian\WebstormProjects\react-card-game\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ian\WebstormProjects\react-card-game\src\components\Card" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\ian\WebstormProjects\react-card-game\src\game\reducer.ts" />
+      <recent name="C:\Users\ian\WebstormProjects\react-card-game\src\game\schema.ts" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -73,8 +82,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607779352971</updated>
-      <workItem from="1607779354118" duration="4450000" />
+      <workItem from="1607779354118" duration="11258000" />
     </task>
+    <task id="LOCAL-00001" summary="Scaffolding">
+      <created>1607783809896</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607783809896</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +109,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Scaffolding" />
     <option name="LAST_COMMIT_MESSAGE" value="Scaffolding" />
   </component>

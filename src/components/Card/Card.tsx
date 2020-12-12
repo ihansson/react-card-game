@@ -1,13 +1,20 @@
 import { FunctionComponent, ReactElement } from "react";
+import "./Card.css";
+import { FACE } from "../../game/schema";
 
 export interface CardProps {
   children?:
     | ReactElement<FrontProps | BackProps>
     | ReactElement<FrontProps | BackProps>[];
+  facing: FACE;
 }
 
-export const Card: FunctionComponent<CardProps> = ({ children }) => {
-  return <div>{children}</div>;
+export const Card: FunctionComponent<CardProps> = ({ children, facing }) => {
+  return (
+    <div className="Card">
+      Facing: {facing} {children}
+    </div>
+  );
 };
 
 export interface FrontProps {

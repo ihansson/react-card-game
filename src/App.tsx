@@ -1,21 +1,44 @@
 import React from "react";
 import { Zone } from "./components/Zone";
 import { Stack } from "./components/Stack";
-import { Card, Front, Back } from "./components/Card";
-import { TextLayout } from "./components/CardLayouts/TextLayout";
-import { ImageLayout } from "./components/CardLayouts/ImageLayout";
+import { Back, Card, Front } from "./components/Card/Card";
+import { CardText } from "./components/Card/CardText";
+import { CardImage } from "./components/Card/CardImage";
+
+import { test } from "./game/store";
+import { FACE } from "./game/schema";
+
+test();
 
 function App() {
   return (
     <div>
       <Zone>
         <Stack>
-          <Card>
+          <Card facing={FACE.UP}>
             <Front>
-              <TextLayout>Some Text Here</TextLayout>
+              <CardText>Some Text Here</CardText>
             </Front>
             <Back>
-              <ImageLayout alt="Alt Text" image="image_url" />
+              <CardImage alt="Alt Text" image="image_url" />
+            </Back>
+          </Card>
+          <Card facing={FACE.UP}>
+            <Front>
+              <CardText>Some Text Here</CardText>
+            </Front>
+            <Back>
+              <CardImage alt="Alt Text" image="image_url" />
+            </Back>
+          </Card>
+        </Stack>
+        <Stack>
+          <Card facing={FACE.UP}>
+            <Front>
+              <CardText>Some Text Here</CardText>
+            </Front>
+            <Back>
+              <CardImage alt="Alt Text" image="image_url" />
             </Back>
           </Card>
         </Stack>
