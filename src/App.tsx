@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Zone } from "./components/Zone";
+import { Stack } from "./components/Stack";
+import { Card, Front, Back } from "./components/Card";
+import { TextLayout } from "./components/CardLayouts/TextLayout";
+import { ImageLayout } from "./components/CardLayouts/ImageLayout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Zone>
+        <Stack>
+          <Card>
+            <Front>
+              <TextLayout>Some Text Here</TextLayout>
+            </Front>
+            <Back>
+              <ImageLayout alt="Alt Text" image="image_url" />
+            </Back>
+          </Card>
+        </Stack>
+      </Zone>
     </div>
   );
 }
