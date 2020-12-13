@@ -31,31 +31,11 @@ export const Card = ({ id, facing }: { id: CardId; facing: FACE }): ICard => {
 // Reducer
 
 export function test() {
-  let state = reducer(initialState, {
+  reducer(initialState, {
     type: ACTION.SPAWN_CARD,
     card: {
       id: "4",
       facing: FACE.UP,
     },
   });
-  console.log(state.stacks);
-  state = reducer(state, {
-    type: ACTION.MOVE_CARD,
-    cardId: "4",
-    stackId: "1",
-  });
-  console.log(state.stacks);
-  state = reducer(state, {
-    type: ACTION.REORDER_CARD,
-    stackId: "1",
-    oldIndex: 2,
-    newIndex: 0,
-  });
-  console.log(state.stacks[0].cards);
-  state = reducer(state, {
-    type: ACTION.FLIP_STACK,
-    stackId: "1",
-    facing: FACE.DOWN,
-  });
-  console.log(state.cards);
 }

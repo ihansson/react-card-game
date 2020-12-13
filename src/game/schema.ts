@@ -1,3 +1,5 @@
+// Card
+
 export type CardId = string;
 
 export enum FACE {
@@ -10,6 +12,8 @@ export interface ICard {
   facing: FACE;
 }
 
+// Stack
+
 export type StackId = string;
 
 export interface IStack {
@@ -17,7 +21,23 @@ export interface IStack {
   cards: CardId[];
 }
 
+// Store
+
 export interface IState {
   stacks: IStack[];
   cards: ICard[];
+}
+
+// Component Helpers
+
+export interface IPosition {
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+}
+
+export interface ISize {
+  width: number;
+  height: number;
 }

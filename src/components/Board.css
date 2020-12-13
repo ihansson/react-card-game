@@ -1,0 +1,29 @@
+.Board {
+    width: 1200px;
+    height: 800px;
+    margin: 2em;
+    position: relative;
+    border: 3px dotted #777;
+}
+
+.GameObject {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.Label {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #eee;
+}
+
+.Card {
+    background: #fff;
+    width: 200px;
+    height: 300px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}

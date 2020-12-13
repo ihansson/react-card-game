@@ -1,5 +1,4 @@
 import { FunctionComponent, ReactElement } from "react";
-import "./Card.css";
 import { FACE } from "../../game/schema";
 
 export interface CardProps {
@@ -7,11 +6,16 @@ export interface CardProps {
     | ReactElement<FrontProps | BackProps>
     | ReactElement<FrontProps | BackProps>[];
   facing: FACE;
+  transform?: string;
 }
 
-export const Card: FunctionComponent<CardProps> = ({ children, facing }) => {
+export const Card: FunctionComponent<CardProps> = ({
+  children,
+  facing,
+  transform = "",
+}) => {
   return (
-    <div className="Card">
+    <div className="GameObject Card" style={{ transform }}>
       Facing: {facing} {children}
     </div>
   );
