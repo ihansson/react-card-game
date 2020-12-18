@@ -4,6 +4,8 @@
     margin: 2em;
     position: relative;
     border: 3px dotted #777;
+    perspective: 1200px;
+    transform-style: preserve-3d;
 }
 
 .GameObject {
@@ -25,5 +27,22 @@
     background: #fff;
     width: 200px;
     height: 300px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.CardFace {
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.CardFront {
+    background: red;
+}
+
+.CardBack {
+    background: blue;
+    transform: rotateY( 180deg );
 }
