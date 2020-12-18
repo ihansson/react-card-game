@@ -7,8 +7,8 @@ import { ACTION, reducer } from "./reducer";
 
 export const initialState: IState = {
   stacks: [
-    { id: "1", cards: ["1", "2"] },
-    { id: "2", cards: ["3"] },
+    { id: "1", position: { top: 0, left: 0 }, cards: ["1", "2"] },
+    { id: "2", position: { top: 0, left: 0 }, cards: ["3"] },
   ],
   cards: [
     { id: "1", facing: FACE.UP },

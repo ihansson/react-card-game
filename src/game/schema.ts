@@ -18,6 +18,7 @@ export type StackId = string;
 
 export interface IStack {
   id: StackId;
+  position: IPosition;
   cards: CardId[];
 }
 

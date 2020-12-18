@@ -4,13 +4,14 @@ import { CardText } from "./components/Card/CardText";
 import { CardImage } from "./components/Card/CardImage";
 
 import { test } from "./game/store";
-import { FACE, IBoardState } from "./game/schema";
+import { FACE, IBoardState, IStack } from "./game/schema";
 import { Board } from "./components/Board";
 
 test();
 
 const states = [
   {
+    id: "card-a",
     index: 0,
     order: 2,
     facing: FACE.UP,
@@ -21,6 +22,7 @@ const states = [
     },
   },
   {
+    id: "card-a",
     index: 1,
     order: 2,
     facing: FACE.DOWN,
@@ -34,6 +36,7 @@ const states = [
 
 const states2 = [
   {
+    id: "card-b",
     index: 0,
     order: 1,
     facing: FACE.DOWN,
@@ -44,6 +47,7 @@ const states2 = [
     },
   },
   {
+    id: "card-b",
     index: 1,
     order: 3,
     facing: FACE.DOWN,
@@ -65,6 +69,19 @@ function App() {
       height: 800,
     },
   };
+
+  const stacks: IStack[] = [
+    {
+      id: "stack-a",
+      position: { top: 0.25, left: 0.5 },
+      cards: ["card-a"],
+    },
+    {
+      id: "stack-b",
+      position: { bottom: 0.25, left: 0.5 },
+      cards: ["card-b"],
+    },
+  ];
 
   return (
     <div>
@@ -90,7 +107,7 @@ function App() {
       >
         Test animation 2
       </button>
-      <Board state={boardState}>
+      <Board state={boardState} stacks={stacks}>
         <Card {...state}>
           <Front>
             <CardText>Some Text Here</CardText>
