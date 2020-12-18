@@ -46,7 +46,7 @@ export const Stack: FunctionComponent<StackProps> = ({
   );
 };
 
-function calculateTransformFromPosition(
+export function calculateTransformFromPosition(
   position: IPosition,
   size: ISize,
   wrapperSize: ISize,
