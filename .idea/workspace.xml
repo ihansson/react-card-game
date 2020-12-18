@@ -6,10 +6,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Board.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Board.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Board.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Board.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Stack.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/schema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +78,7 @@
       <workItem from="1607838100145" duration="3432000" />
       <workItem from="1607842505768" duration="191000" />
       <workItem from="1607923668293" duration="892000" />
-      <workItem from="1608265902249" duration="3334000" />
+      <workItem from="1608265902249" duration="4473000" />
     </task>
     <task id="LOCAL-00001" summary="Scaffolding">
       <created>1607783809896</created>
@@ -111,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608267194984</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Card facing animation and ordering.">
+      <created>1608269414700</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608269414700</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +139,8 @@
     <MESSAGE value="Basic card action reducer" />
     <MESSAGE value="Basic card positioning" />
     <MESSAGE value="Refactoring / removing stacks as component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring / removing stacks as component" />
+    <MESSAGE value="Card facing animation and ordering." />
+    <option name="LAST_COMMIT_MESSAGE" value="Card facing animation and ordering." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -37,7 +37,7 @@ const states2 = [
     index: 0,
     order: 1,
     facing: FACE.DOWN,
-    position: { top: 0.35, left: 0.6 },
+    position: { top: 0.35, left: 0.3 },
     size: {
       width: 200,
       height: 300,

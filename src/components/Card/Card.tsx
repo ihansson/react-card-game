@@ -33,6 +33,7 @@ export const Card: FunctionComponent<CardProps> = ({
           order,
           { width: 0, height: 0 }
         ),
+        boxShadow: `3px 8px ${10 + order * 4}px rgba(0,0,0,0.4)`,
       }}
     >
       {children}

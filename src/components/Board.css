@@ -27,9 +27,8 @@
     background: #fff;
     width: 200px;
     height: 300px;
-    transition: transform 1s;
+    transition: transform 1s, box-shadow 1s;
     transform-style: preserve-3d;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .CardFace {
@@ -39,10 +38,10 @@
 }
 
 .CardFront {
-    background: red;
+    background: #ccde8a;
 }
 
 .CardBack {
-    background: blue;
+    background: #8adecd;
     transform: rotateY( 180deg );
 }
