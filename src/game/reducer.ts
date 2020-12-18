@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { CardId, FACE, ICard, IStack, StackId } from "./schema";
 import { array_move, array_shuffle } from "./helpers";
 import { Card } from "./store";

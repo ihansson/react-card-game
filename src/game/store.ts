@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Schema
 
 import { CardId, FACE, ICard, IState } from "./schema";
@@ -7,8 +9,8 @@ import { ACTION, reducer } from "./reducer";
 
 export const initialState: IState = {
   stacks: [
-    { id: "1", position: { top: 0, left: 0 }, cards: ["1", "2"] },
-    { id: "2", position: { top: 0, left: 0 }, cards: ["3"] },
+    { id: "1", position: { top: 0, left: 0 } },
+    { id: "2", position: { top: 0, left: 0 } },
   ],
   cards: [
     { id: "1", facing: FACE.UP },

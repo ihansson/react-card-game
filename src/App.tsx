@@ -4,58 +4,53 @@ import { CardText } from "./components/Card/CardText";
 import { CardImage } from "./components/Card/CardImage";
 
 import { test } from "./game/store";
-import { FACE, IBoardState, IStack } from "./game/schema";
+import { FACE, IStackAny, StackId } from "./game/schema";
 import { Board } from "./components/Board";
+import { Stack } from "./components/Stack";
 
 test();
 
+/*
+@TODO
+
+- Nice test graphics
+- Testing data / using reducer
+- Convert all units to percentage
+- Use ratios for sizes where relevant
+- Sort out schema / stack props
+*/
+
 const states = [
   {
-    id: "card-a",
     index: 0,
-    order: 2,
+    id: "card-a",
+    stack: "stack-a",
+    order: 0,
     facing: FACE.UP,
-    position: { top: 0.25, left: 0.5 },
-    size: {
-      width: 200,
-      height: 300,
-    },
   },
   {
-    id: "card-a",
     index: 1,
-    order: 2,
+    id: "card-a",
+    stack: "stack-b",
+    order: 1,
     facing: FACE.DOWN,
-    position: { bottom: 0.25, right: 0.4 },
-    size: {
-      width: 160,
-      height: 240,
-    },
   },
 ];
 
 const states2 = [
   {
-    id: "card-b",
     index: 0,
+    id: "card-b",
+    stack: "stack-a",
     order: 1,
     facing: FACE.DOWN,
-    position: { top: 0.35, left: 0.3 },
-    size: {
-      width: 200,
-      height: 300,
-    },
   },
   {
-    id: "card-b",
     index: 1,
-    order: 3,
-    facing: FACE.DOWN,
-    position: { top: 0.35, left: 0.6 },
-    size: {
-      width: 200,
-      height: 300,
-    },
+    id: "card-b",
+    stack: "stack-b",
+    order: 0,
+    facing: FACE.UP,
   },
 ];
 
@@ -63,25 +58,31 @@ function App() {
   const [state, setState] = useState(states[0]);
   const [state2, setState2] = useState(states2[0]);
 
-  const boardState: IBoardState = {
-    size: {
-      width: 1200,
-      height: 800,
+  const stacks: Record<StackId, IStackAny> = {
+    "stack-a": {
+      id: "stack-a",
+      mode: "pile",
+      position: { top: 0.25, left: 0.5 },
+      cardSizeMode: "fixed",
+      cardPositionShift: { width: 5, height: 5 },
+      cardSize: {
+        width: 200,
+        height: 300,
+      },
+    },
+    "stack-b": {
+      id: "stack-b",
+      mode: "grid",
+      gridColumns: 3,
+      gridGutter: 20,
+      position: { bottom: 0.5, left: 0.5 },
+      cardSizeMode: "fit",
+      stackSize: {
+        width: 400,
+        height: 800,
+      },
     },
   };
-
-  const stacks: IStack[] = [
-    {
-      id: "stack-a",
-      position: { top: 0.25, left: 0.5 },
-      cards: ["card-a"],
-    },
-    {
-      id: "stack-b",
-      position: { bottom: 0.25, left: 0.5 },
-      cards: ["card-b"],
-    },
-  ];
 
   return (
     <div>
@@ -107,7 +108,18 @@ function App() {
       >
         Test animation 2
       </button>
-      <Board state={boardState} stacks={stacks}>
+      <Board
+        size={{
+          width: 1200,
+          height: 800,
+        }}
+      >
+        <Stack {...stacks["stack-a"]}>
+          <span>Some stack content</span>
+        </Stack>
+        <Stack {...stacks["stack-b"]}>
+          <span>Some stack content</span>
+        </Stack>
         <Card {...state}>
           <Front>
             <CardText>Some Text Here</CardText>
@@ -121,7 +133,7 @@ function App() {
             <CardText>Some Text Here</CardText>
           </Front>
           <Back>
-            <CardImage alt="Alt Text" image="image_url" />
+            <CardText>Some Text Here</CardText>
           </Back>
         </Card>
       </Board>

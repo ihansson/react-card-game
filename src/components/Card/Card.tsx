@@ -1,6 +1,11 @@
 import { FunctionComponent, ReactElement } from "react";
-import { FACE, IPosition, ISize, IBoardState } from "../../game/schema";
-import { DefaultBoardState } from "../Board";
+import {
+  FACE,
+  IPosition,
+  ISize,
+  DefaultSize,
+  DefaultPosition,
+} from "../../game/schema";
 
 export interface CardProps {
   children?:
@@ -8,18 +13,20 @@ export interface CardProps {
     | ReactElement<FrontProps | BackProps>[];
   facing: FACE;
   order: number;
-  position: IPosition;
-  size: ISize;
-  board?: IBoardState;
+  position?: IPosition;
+  size?: ISize;
+  offset?: ISize;
+  boardSize?: ISize;
 }
 
 export const Card: FunctionComponent<CardProps> = ({
   children,
   facing,
   order,
-  position,
-  size,
-  board = DefaultBoardState,
+  position = DefaultPosition,
+  size = DefaultSize,
+  offset = DefaultSize,
+  boardSize = DefaultSize,
 }) => {
   return (
     <div
@@ -28,12 +35,12 @@ export const Card: FunctionComponent<CardProps> = ({
         transform: calculateTransformFromPosition(
           position,
           size,
-          board.size,
+          boardSize,
           facing,
           order,
-          { width: 0, height: 0 }
+          offset
         ),
-        boxShadow: `3px 8px ${10 + order * 4}px rgba(0,0,0,0.4)`,
+        boxShadow: `3px 8px ${10 + order * 4}px rgba(0,0,0,0.2)`,
       }}
     >
       {children}
@@ -46,7 +53,20 @@ export interface FrontProps {
 }
 
 export const Front: FunctionComponent<FrontProps> = ({ children }) => {
-  return <div className="GameObject CardFace CardFront">{children}</div>;
+  return (
+    <div className="GameObject CardFace CardFront">
+      <img
+        width="215"
+        height="200"
+        alt=""
+        src="/images/startup__isometric.svg"
+      />
+      <div>
+        <strong>Rocket Launch</strong>
+        {children}
+      </div>
+    </div>
+  );
 };
 
 export interface BackProps {
@@ -54,7 +74,20 @@ export interface BackProps {
 }
 
 export const Back: FunctionComponent<BackProps> = ({ children }) => {
-  return <div className="GameObject CardFace CardBack">{children}</div>;
+  return (
+    <div className="GameObject CardFace CardBack">
+      <img
+        width="215"
+        height="200"
+        alt=""
+        src="/images/online_payment_isometric.svg"
+      />
+      <div>
+        <strong>Take Payment</strong>
+        {children}
+      </div>
+    </div>
+  );
 };
 
 function calculateTransformFromPosition(
