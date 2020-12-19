@@ -17,6 +17,9 @@ export interface CardProps {
   size?: ISize;
   offset?: ISize;
   boardSize?: ISize;
+  label: string;
+  description: string;
+  onClick: any;
 }
 
 export const Card: FunctionComponent<CardProps> = ({
@@ -27,9 +30,13 @@ export const Card: FunctionComponent<CardProps> = ({
   size = DefaultSize,
   offset = DefaultSize,
   boardSize = DefaultSize,
+  label,
+  description,
+  onClick,
 }) => {
   return (
     <div
+      onClick={onClick ? onClick : () => {}}
       className={`GameObject Card ${facing === FACE.UP ? "is-up" : "is-down"}`}
       style={{
         transform: calculateTransformFromPosition(
@@ -43,7 +50,11 @@ export const Card: FunctionComponent<CardProps> = ({
         boxShadow: `3px 8px ${10 + order * 4}px rgba(0,0,0,0.2)`,
       }}
     >
-      {children}
+      <Front>
+        <strong>{label}</strong>
+        <div>{description}</div>
+      </Front>
+      <Back></Back>
     </div>
   );
 };
@@ -53,20 +64,7 @@ export interface FrontProps {
 }
 
 export const Front: FunctionComponent<FrontProps> = ({ children }) => {
-  return (
-    <div className="GameObject CardFace CardFront">
-      <img
-        width="215"
-        height="200"
-        alt=""
-        src="/images/startup__isometric.svg"
-      />
-      <div>
-        <strong>Rocket Launch</strong>
-        {children}
-      </div>
-    </div>
-  );
+  return <div className="GameObject CardFace CardFront">{children}</div>;
 };
 
 export interface BackProps {
@@ -120,8 +118,9 @@ function calculateTransformFromPosition(
       y += offset.height;
     }
   }
-  const scale = size.width / 200;
+  const scale = 1;
   const rotateY = facing === FACE.UP ? 0 : 180;
   const z = order * 10;
+  y = 25;
   return `translate3d(${x}px, ${y}px, ${z}px) scale(${scale}) rotateY(${rotateY}deg)`;
 }

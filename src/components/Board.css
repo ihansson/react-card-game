@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Basic:wght@400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Gentium Basic', serif;
     background: #f6f6f6;
@@ -44,14 +48,16 @@ body {
     backface-visibility: hidden;
     border-radius: 0.25em;
     overflow: hidden;
-    color: white;
+    padding: 1em;
 }
 
 .CardFront {
-    background: #FBB03B;
+    background: #fff;
+    color: #333;
 }
 
 .CardBack {
     background: #FF70B0;
+    color: white;
     transform: rotateY( 180deg );
 }

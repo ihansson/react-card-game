@@ -1,11 +1,11 @@
 import React from "react";
-import { FunctionComponent, ReactElement } from "react";
+import { FunctionComponent } from "react";
 import "./Board.css";
 import { DefaultCardSize, ISize, IStackAny, StackId } from "../game/schema";
 import { CardProps } from "./Card/Card";
 
 export interface BoardProps {
-  children?: ReactElement | ReactElement[];
+  children?: any;
   size: ISize;
 }
 
@@ -57,7 +57,7 @@ function calculateCardPropsForStack(
   addedProps.position = stack.position;
 
   addedProps.offset = {
-    width: card.order * (1.1 * cardSize.width),
+    width: card.order * (1.1 * cardSize.width * 2000),
     height: 0,
   };
 

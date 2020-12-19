@@ -1,0 +1,61 @@
+{
+  "health-crisis": {
+    "label": "Health Crisis",
+    "description": "Deals damage to population",
+    "health": 5,
+    "cycle": [[{
+      "type": "buff",
+      "target": "population",
+      "amount": -2
+    }],[{
+      "type": "wait"
+    }]]
+  },
+  "misinformation": {
+    "label": "Misinformation",
+    "description": "Temp decreases innovation | Deals damage to population",
+    "health": 5,
+    "cycle": [[{
+      "type": "temp_buff",
+      "target": "innovation",
+      "amount": -1,
+      "turns": 2
+    }],[{
+      "type": "buff",
+      "target": "population",
+      "amount": -1
+    }],[{
+      "type": "wait"
+    }]]
+  },
+  "corruption": {
+    "label": "Corruption",
+    "description": "Deals tiny damage | Deals small damage | Deals large damage ",
+    "health": 5,
+    "cycle": [[{
+      "type": "buff",
+      "target": "population",
+      "amount": -1
+    }],[{
+      "type": "buff",
+      "target": "population",
+      "amount": -2
+    }],[{
+      "type": "buff",
+      "target": "population",
+      "amount": -4
+    }]]
+  },
+  "shortage": {
+    "label": "Shortage",
+    "description": "Deals income damage",
+    "health": 5,
+    "cycle": [[{
+      "type": "wait"
+    }],[{
+      "type": "buff",
+      "target": "income",
+      "amount": -2
+    }]]
+  }
+}

@@ -16,6 +16,8 @@ You will choose to go to the next town.
 
 On completing a town you will be given the choice to take one of 3 cards. The town will also offer to take one of your cards from you. You will also get some number of currency based on the towns final income stat.
 
+Any damage caused to towns will decrease a player's reputation, if reputation reaches 0 they will lose.
+
 Every X number of towns will be a shop.
 
 There is a 'map' which shows X number of total levels and if they are towns or shops.

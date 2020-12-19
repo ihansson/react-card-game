@@ -1,0 +1,47 @@
+[
+  {
+    "type": "intro"
+  },
+  {
+    "type": "town",
+    "town": {
+      "label": "First Town",
+      "enemies": ["health-crisis", "health-crisis","misinformation"],
+      "properties": {
+        "income": 5,
+        "population": 5,
+        "motivation": 3,
+        "innovation": 3
+      }
+    }
+  },
+  {
+    "type": "town",
+    "town": {
+      "label": "Second Town",
+      "enemies": ["health-crisis", "misinformation","corruption"],
+      "properties": {
+        "income": 5,
+        "population": 5,
+        "motivation": 3,
+        "innovation": 3
+      }
+    }
+  },
+  {
+    "type": "shop"
+  },
+  {
+    "type": "town",
+    "town": {
+      "label": "Third Town",
+      "enemies": ["health-crisis", "corruption", "shortage", "shortage"],
+      "properties": {
+        "income": 5,
+        "population": 5,
+        "motivation": 3,
+        "innovation": 3
+      }
+    }
+  }
+]

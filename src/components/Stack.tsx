@@ -1,17 +1,5 @@
-import { FunctionComponent, ReactElement } from "react";
+import { FunctionComponent, Fragment } from "react";
 
-export interface StackProps {
-  children?: ReactElement | ReactElement[];
-  cardCount?: number;
-}
-
-export const Stack: FunctionComponent<StackProps> = ({
-  children,
-  cardCount = 0,
-}) => {
-  return (
-    <div>
-      {children} .Cards: {cardCount}
-    </div>
-  );
+export const Stack: FunctionComponent<any> = () => {
+  return <Fragment></Fragment>;
 };

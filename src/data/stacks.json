@@ -1,5 +1,5 @@
-[
-  {
+{
+  "game-board": {
     "id": "game-board",
     "mode": "grid",
     "gridColumns": 4,
@@ -14,7 +14,7 @@
     },
     "cardSizeMode": "fit"
   },
-  {
+  "player-hand": {
     "id": "player-hand",
     "mode": "fan",
     "position": {
@@ -31,7 +31,7 @@
       "ratio": 1.5
     }
   },
-  {
+  "pick-a-card": {
     "id": "pick-a-card",
     "mode": "carousel",
     "position": {
@@ -48,7 +48,7 @@
       "ratio": 1.5
     }
   },
-  {
+  "draw": {
     "id": "draw",
     "mode": "pile",
     "position": {
@@ -61,7 +61,7 @@
       "ratio": 1.5
     }
   },
-  {
+  "discard": {
     "id": "discard",
     "mode": "pile",
     "position": {
@@ -73,5 +73,18 @@
       "width": 0.05,
       "ratio": 1.5
     }
+  },
+  "trash": {
+    "id": "trash",
+    "mode": "pile",
+    "position": {
+      "top": 1,
+      "left": 1
+    },
+    "cardSizeMode": "fixed",
+    "cardSize": {
+      "width": 0.05,
+      "ratio": 1.5
+    }
   }
-]
+}
