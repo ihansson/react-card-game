@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9f36aab-1990-449c-803c-08d9febb71af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/card_types.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/cards.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/idea.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/stacks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/idea.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/idea.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +82,7 @@
       <workItem from="1608265902249" duration="6319000" />
       <workItem from="1608297293709" duration="9707000" />
       <workItem from="1608322664223" duration="1035000" />
-      <workItem from="1608349345238" duration="1145000" />
+      <workItem from="1608349345238" duration="2003000" />
     </task>
     <task id="LOCAL-00001" summary="Scaffolding">
       <created>1607783809896</created>
@@ -145,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608308130947</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Mapping out data.">
+      <created>1608350871557</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608350871557</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +175,8 @@
     <MESSAGE value="Card shadow animation" />
     <MESSAGE value="New stack management interface" />
     <MESSAGE value="Visual refinements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Visual refinements" />
+    <MESSAGE value="Mapping out data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Mapping out data." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
