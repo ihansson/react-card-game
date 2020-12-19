@@ -1,6 +1,95 @@
 {
-  "type_name": {
-    "type": "type_name",
-    "display": "display_prop"
+  "educate": {
+    "label": "Educate",
+    "description": "Deal 2 damage to front enemy",
+    "type": "player_card",
+    "set": "starter",
+    "energy": 1,
+    "effect": [{
+      "type": "damage",
+      "target": "front",
+      "amount": 2
+    }]
+  },
+  "newsletter": {
+    "label": "Newsletter",
+    "description": "Deal 1 damage to all enemies",
+    "type": "player_card",
+    "set": "starter",
+    "energy": 1,
+    "effect": [{
+      "type": "damage",
+      "target": "all",
+      "amount": 1
+    }]
+  },
+  "distract": {
+    "label": "Distract",
+    "description": "Block 1 income and population damage",
+    "type": "player_card",
+    "set": "starter",
+    "energy": 1,
+    "effect": [{
+      "type": "block",
+      "property": "population",
+      "amount": 2
+    },{
+      "type": "block",
+      "property": "income",
+      "amount": 2
+    }]
+  },
+  "redirect": {
+    "label": "Redirect",
+    "description": "Block 1 population damage and draw a card",
+    "type": "player_card",
+    "set": "starter",
+    "energy": 2,
+    "effect": [{
+      "type": "draw",
+      "amount": 1
+    },{
+      "type": "block_population",
+      "amount": 3
+    }]
+  },
+  "housing": {
+    "label": "Housing",
+    "description": "Increase population by 2 and decrease income by 1",
+    "type": "player_card",
+    "set": "uncommon",
+    "energy": 1,
+    "effect": [{
+      "type": "buff",
+      "property": "population",
+      "amount": 2
+    },{
+      "type": "buff",
+      "property": "income",
+      "amount": -1
+    }]
+  },
+  "speech": {
+    "label": "Speech",
+    "description": "Gain 3 energy",
+    "type": "player_card",
+    "set": "uncommon",
+    "energy": 1,
+    "effect": [{
+      "type": "energy",
+      "amount": 3
+    }]
+  },
+  "rocket": {
+    "label": "Rocket Launch",
+    "description": "Increase innovation",
+    "type": "player_card",
+    "set": "rare",
+    "energy": 3,
+    "effect": [{
+      "type": "buff",
+      "property": "innovation",
+      "amount": 1
+    }]
   }
 }

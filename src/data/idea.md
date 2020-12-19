@@ -58,7 +58,7 @@ Newsletter - Deal small damage to all units
 
 Distract - Block any damage
 
-Redirect - Block small damage and draw a card
+Redirect - Block population damage and draw a card
 
 ### Uncommon
 

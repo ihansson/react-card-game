@@ -1,8 +1,14 @@
 [
-  {
-    "id": 1,
-    "stack": "player-hand",
-    "type": "type_name",
-    "faceUp": true
-  }
+  {"id": 1, "type": "educate"},
+  {"id": 2, "type": "educate"},
+  {"id": 3, "type": "educate"},
+  {"id": 4, "type": "educate"},
+  {"id": 5, "type": "newsletter"},
+  {"id": 6, "type": "newsletter"},
+  {"id": 7, "type": "distract"},
+  {"id": 8, "type": "distract"},
+  {"id": 9, "type": "distract"},
+  {"id": 10, "type": "distract"},
+  {"id": 11, "type": "redirect"},
+  {"id": 12, "type": "redirect"}
 ]
