@@ -1,4 +1,4 @@
-## Summary
+# Summary
 
 You are a roving mayor and go from town to town trying to fix it. You build up a deck of card which gives you more options to fix the town.
 
@@ -8,7 +8,7 @@ If a town reaches 0 "health" or "income" the player loses.
 
 The player has some money which it can spend for cards at shops.
 
-### Meta Cycle
+## Meta Cycle
 
 At the start the game you will have X generic type cards. You will be presented with 3 rare cards and pick 1.
 
@@ -20,7 +20,7 @@ Every X number of towns will be a shop.
 
 There is a 'map' which shows X number of total levels and if they are towns or shops.
 
-### In Town Cycle
+## In Town Cycle
 
 The player draws x number of cards from the draw pile, if the draw pile is empty the discard pile gets shuffled in. They have X amount of energy to play any amount of cards they have.
 
@@ -32,18 +32,65 @@ On the next turn the player restores all energy and redraws a new hand.
 
 The town cycle ends when the town has no remaining "health" or "income" or the "enemies" have been defeated.
 
-### Town Properties
+## Town Properties
 
 Income - If income reaches 0 the player loses. This controls levels of money gained on completing the town.
+
 Population - If population reaches 0 the player loses
+
 Motivation - Controls amount of energy the player restores every turn.
 
-### Shops
+Innovation - Controls amount of cards the player draws per turn
+
+## Shops
 
 Shops will contain a fixed number of rare and uncommon cards which can be purchased.
 
-### Cards
+## Cards
 
 Cards have rarities. "Starter" "Uncommon" "Rare"
 
-### Enemies
+### Starter
+
+Educate - Deal damage to front unit
+
+Newsletter - Deal small damage to all units
+
+Distract - Block any damage
+
+Redirect - Block small damage and draw a card
+
+### Uncommon
+
+Block population damage
+
+Block income damage
+
+Investment - Increase income
+
+Housing - Decrease income, increase population
+
+Speech - Gain energy
+
+Science - Draw card
+
+### Rare
+
+Artwork - Increase motivation temporarily
+
+Rocket - Increase innovation temporarily
+
+## Enemies
+
+Health Crisis - Deals damage to population | wait - repeat
+
+Political Scandal - wait | Temp decrease motivation - repeat
+
+Misinformation - Temp decreases innovation | Deals damage to population | wait - repeat
+
+Corruption - Deals tiny damage | Deals small damage | Deals large damage - repeat
+
+Shortage - wait | Deals income damage - repeat
+
+Crime Wave - Deals population damage and temp decreases motivation | Deals income damage - repeat
+
