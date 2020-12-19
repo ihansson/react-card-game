@@ -1,0 +1,77 @@
+[
+  {
+    "id": "game-board",
+    "mode": "grid",
+    "gridColumns": 4,
+    "gridGutter": 0.01,
+    "position": {
+      "left": 0.125,
+      "top": 0
+    },
+    "stackSize": {
+      "width": 0.75,
+      "height": 0.5
+    },
+    "cardSizeMode": "fit"
+  },
+  {
+    "id": "player-hand",
+    "mode": "fan",
+    "position": {
+      "left": 0.25,
+      "bottom": 0
+    },
+    "stackSize": {
+      "width": 0.5,
+      "height": 0.5
+    },
+    "cardSizeMode": "fixed",
+    "cardSize": {
+      "width": 0.1,
+      "ratio": 1.5
+    }
+  },
+  {
+    "id": "pick-a-card",
+    "mode": "carousel",
+    "position": {
+      "left": 0.25,
+      "top": 0.25
+    },
+    "stackSize": {
+      "width": 0.5,
+      "height": 0.5
+    },
+    "cardSizeMode": "fixed",
+    "cardSize": {
+      "width": 0.1,
+      "ratio": 1.5
+    }
+  },
+  {
+    "id": "draw",
+    "mode": "pile",
+    "position": {
+      "bottom": 0,
+      "right": 0
+    },
+    "cardSizeMode": "fixed",
+    "cardSize": {
+      "width": 0.05,
+      "ratio": 1.5
+    }
+  },
+  {
+    "id": "discard",
+    "mode": "pile",
+    "position": {
+      "bottom": 0,
+      "left": 0
+    },
+    "cardSizeMode": "fixed",
+    "cardSize": {
+      "width": 0.05,
+      "ratio": 1.5
+    }
+  }
+]
