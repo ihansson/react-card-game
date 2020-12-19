@@ -12,9 +12,16 @@ import { FACE } from "./game/schema";
 const initialState = {
   stage: 0,
   screen: "stage",
-  reputation: 5,
   deck: [],
 };
+
+/*
+- Fix positioning and size of cards to use relative units
+- Manage state in some meaningful way
+- Get rid of FACE type
+- Stop assigning properties to card which it doesn't need.
+
+ */
 
 export const Game = () => {
   const [gameState, setGameState] = useState(initialState);
@@ -77,17 +84,15 @@ export const Intro: FunctionComponent<{
       if (_card !== card) {
         return { ..._card, stack: "trash" };
       } else {
-        return { ..._card, stack: "deck" };
+        return { ..._card, stack: "draw" };
       }
     });
     setCards(_cards);
   }
 
-  console.log(cards);
-
   return (
     <Fragment>
-      <Board size={{ width: 800, height: 400 }}>
+      <Board size={{ width: 1000, height: 800 }}>
         <Stack {...stacks["draw"]} />
         <Stack {...stacks["trash"]} />
         <Stack {...stacks["pick-a-card"]} />

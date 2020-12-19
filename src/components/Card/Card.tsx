@@ -1,11 +1,5 @@
 import { FunctionComponent, ReactElement } from "react";
-import {
-  FACE,
-  IPosition,
-  ISize,
-  DefaultSize,
-  DefaultPosition,
-} from "../../game/schema";
+import { FACE, ISize, DefaultSize } from "../../game/schema";
 
 export interface CardProps {
   children?:
@@ -13,9 +7,8 @@ export interface CardProps {
     | ReactElement<FrontProps | BackProps>[];
   facing: FACE;
   order: number;
-  position?: IPosition;
+  position?: ISize;
   size?: ISize;
-  offset?: ISize;
   boardSize?: ISize;
   label: string;
   description: string;
@@ -26,9 +19,8 @@ export const Card: FunctionComponent<CardProps> = ({
   children,
   facing,
   order,
-  position = DefaultPosition,
+  position = DefaultSize,
   size = DefaultSize,
-  offset = DefaultSize,
   boardSize = DefaultSize,
   label,
   description,
@@ -39,14 +31,8 @@ export const Card: FunctionComponent<CardProps> = ({
       onClick={onClick ? onClick : () => {}}
       className={`GameObject Card ${facing === FACE.UP ? "is-up" : "is-down"}`}
       style={{
-        transform: calculateTransformFromPosition(
-          position,
-          size,
-          boardSize,
-          facing,
-          order,
-          offset
-        ),
+        transform: calculateTransformFromPosition(position, size, facing),
+        // transitionDelay: order * 0.1 + "s",
         boxShadow: `3px 8px ${10 + order * 4}px rgba(0,0,0,0.2)`,
       }}
     >
@@ -88,39 +74,23 @@ export const Back: FunctionComponent<BackProps> = ({ children }) => {
   );
 };
 
+const baseCardWidth = 200;
+
 function calculateTransformFromPosition(
-  position: IPosition,
+  position: ISize,
   size: ISize,
-  wrapperSize: ISize,
-  facing: FACE,
-  order: number,
-  offset?: ISize
+  facing: FACE
 ) {
   let x: number = 0;
   let y: number = 0;
-  const halfWidth = size.width / 2;
-  const halfHeight = size.height / 2;
-  if (position.top) {
-    y = position.top * wrapperSize.height - halfHeight;
-  } else if (position.bottom) {
-    y = wrapperSize.height - halfHeight - position.bottom * wrapperSize.height;
+  if (position.width) {
+    x += position.width;
   }
-  if (position.left) {
-    x = position.left * wrapperSize.width - halfWidth;
-  } else if (position.right) {
-    x = wrapperSize.width - halfWidth - position.right * wrapperSize.width;
+  if (position.height) {
+    y += position.height;
   }
-  if (offset) {
-    if (offset.width) {
-      x += offset.width;
-    }
-    if (offset.height) {
-      y += offset.height;
-    }
-  }
-  const scale = 1;
+  const scale = size.width / baseCardWidth;
   const rotateY = facing === FACE.UP ? 0 : 180;
-  const z = order * 10;
-  y = 25;
+  const z = 0;
   return `translate3d(${x}px, ${y}px, ${z}px) scale(${scale}) rotateY(${rotateY}deg)`;
 }

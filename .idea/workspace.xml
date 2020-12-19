@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9f36aab-1990-449c-803c-08d9febb71af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Game.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/enemy_card_types.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/stages.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Board.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Board.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Board.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Board.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Stack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stack.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/card_types.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/player_card_types.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/cards.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/starting_cards.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/idea.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/idea.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/stacks.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/stacks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/schema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +91,8 @@
       <workItem from="1608297293709" duration="9707000" />
       <workItem from="1608322664223" duration="1035000" />
       <workItem from="1608349345238" duration="6556000" />
-      <workItem from="1608358559469" duration="5426000" />
+      <workItem from="1608358559469" duration="7018000" />
+      <workItem from="1608380295412" duration="3065000" />
     </task>
     <task id="LOCAL-00001" summary="Scaffolding">
       <created>1607783809896</created>
@@ -182,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608354734628</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Roughing out base layouts">
+      <created>1608375437793</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608375437793</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +216,20 @@
     <MESSAGE value="Mapping out data." />
     <MESSAGE value="Fleshing out game ideas." />
     <MESSAGE value="Starting cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting cards" />
+    <MESSAGE value="Roughing out base layouts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Roughing out base layouts" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Board.tsx</url>
+          <line>54</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

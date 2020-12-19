@@ -21,29 +21,26 @@ export interface IStack {
   position: IPosition;
   cardSizeMode?: "fit" | "fixed";
   cardSize?: ISize;
+  gridGutter: number;
+  stackSize: ISize;
 }
 
 export interface IStackPile extends IStack {
   mode: "pile";
   cardPositionShift: ISize;
-  stackSize?: ISize;
 }
 
 export interface IStackCarousel extends IStack {
   mode: "carousel";
-  stackSize: ISize;
 }
 
 export interface IStackGrid extends IStack {
   mode: "grid";
   gridColumns: number;
-  gridGutter: number;
-  stackSize: ISize;
 }
 
 export interface IStackFan extends IStack {
   mode: "fan";
-  stackSize: ISize;
 }
 
 export type IStackAny = IStackPile | IStackCarousel | IStackGrid | IStackFan;

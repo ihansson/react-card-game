@@ -11,12 +11,13 @@ body {
 }
 
 .Board {
-    width: 1200px;
+    width: 1000px;
     height: 800px;
     margin: 2em;
     position: relative;
     perspective: 1200px;
     transform-style: preserve-3d;
+    background: #eee;
 }
 
 .GameObject {
@@ -38,6 +39,7 @@ body {
     width: 200px;
     height: 300px;
     transition: transform 1s, box-shadow 1s;
+    transform-origin: top left;
     transform-style: preserve-3d;
     border-radius: 0.25em;
 }

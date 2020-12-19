@@ -35,16 +35,17 @@
     "id": "pick-a-card",
     "mode": "carousel",
     "position": {
-      "left": 0.25,
-      "top": 0.25
+      "left": 0.15,
+      "top": 0.5
     },
     "stackSize": {
-      "width": 0.5,
+      "width": 0.7,
       "height": 0.5
     },
     "cardSizeMode": "fixed",
+    "gridGutter": 0.05,
     "cardSize": {
-      "width": 0.1,
+      "width": 0.3,
       "ratio": 1.5
     }
   },
@@ -52,12 +53,16 @@
     "id": "draw",
     "mode": "pile",
     "position": {
-      "bottom": 0,
-      "right": 0
+      "left": 0.05,
+      "top": 0.2
+    },
+    "stackSize": {
+      "width": 0.15,
+      "height": 0.25
     },
     "cardSizeMode": "fixed",
     "cardSize": {
-      "width": 0.05,
+      "width": 1,
       "ratio": 1.5
     }
   },
@@ -68,9 +73,13 @@
       "bottom": 0,
       "left": 0
     },
+    "stackSize": {
+      "width": 0.2,
+      "height": 0.25
+    },
     "cardSizeMode": "fixed",
     "cardSize": {
-      "width": 0.05,
+      "width": 1,
       "ratio": 1.5
     }
   },
@@ -78,12 +87,16 @@
     "id": "trash",
     "mode": "pile",
     "position": {
-      "top": 1,
-      "left": 1
+      "top": 0.8,
+      "left": 0.8
+    },
+    "stackSize": {
+      "width": 0.15,
+      "height": 0.25
     },
     "cardSizeMode": "fixed",
     "cardSize": {
-      "width": 0.05,
+      "width": 1,
       "ratio": 1.5
     }
   }

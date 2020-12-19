@@ -31,6 +31,7 @@ export const Board: FunctionComponent<BoardProps> = ({ children, size }) => {
             addedProps = calculateCardPropsForStack(
               child.props,
               stacks[child.props.stack],
+              size,
               stackCount[child.props.stack]
             );
           } else {
@@ -48,20 +49,45 @@ export const Board: FunctionComponent<BoardProps> = ({ children, size }) => {
 function calculateCardPropsForStack(
   card: CardProps,
   stack: IStackAny,
+  boardSize: ISize,
   stackCount: number
 ) {
   const addedProps: any = {};
+  const stackWidth = stack.stackSize.width * boardSize.width;
 
   const cardSize = calculateCardSizeForStack(stack, stackCount);
+  const cardHeight = cardSize.width * stackWidth * (cardSize as any).ratio;
+  console.log(cardHeight);
 
-  addedProps.position = stack.position;
-
-  addedProps.offset = {
-    width: card.order * (1.1 * cardSize.width * 2000),
+  const offset = {
+    width: 0,
     height: 0,
   };
 
-  addedProps.size = cardSize;
+  if (stack.position.left) {
+    offset.width += stack.position.left * boardSize.width;
+  }
+
+  if (stack.position.top) {
+    offset.height += stack.position.top * boardSize.height;
+  }
+
+  offset.height -= cardHeight / 2;
+
+  addedProps.position = {
+    width:
+      stack.mode !== "pile"
+        ? card.order * ((cardSize.width + stack.gridGutter) * stackWidth)
+        : 0,
+    height: 0,
+  };
+
+  addedProps.position.width += offset.width;
+  addedProps.position.height += offset.height;
+
+  addedProps.size = {
+    width: stackWidth * cardSize.width,
+  };
 
   return addedProps;
 }
