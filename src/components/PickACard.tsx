@@ -3,11 +3,7 @@ import { Board } from "./Board";
 import { Stack } from "./Stack";
 import stacks from "../data/stacks.json";
 import { Card } from "./Card/Card";
-import {
-  assignCardStack,
-  createCard,
-  generateRandomCards,
-} from "../game/helpers";
+import { assignCardStack, generateRandomCards } from "../game/helpers";
 import { ICard } from "../game/reducer";
 
 export const PickACard: FunctionComponent = () => {
@@ -22,9 +18,9 @@ export const PickACard: FunctionComponent = () => {
   return (
     <Fragment>
       <Board size={{ width: 1000, height: 800 }}>
-        <Stack {...stacks["draw"]} />
-        <Stack {...stacks["trash"]} />
-        <Stack {...stacks["pick-a-card"]} />
+        {["draw", "trash", "pick-a-card"].map((stackId: string) => (
+          <Stack key={stackId} {...(stacks as any)[stackId]} />
+        ))}
         {cards.map((card) => (
           <Card
             onClick={() => {
