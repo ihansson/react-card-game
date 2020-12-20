@@ -1,171 +1,90 @@
-// @ts-nocheck
+// State Interfaces
 
-import { CardId, FACE, ICard, IStack, StackId } from "./schema";
-import { array_move, array_shuffle } from "./helpers";
-import { Card } from "./store";
-import { initialState } from "./store";
+export interface ICard {
+  id: string;
+  order: number;
+}
+
+export interface IStack {
+  id: string;
+}
+
+export type stageTypes = "intro" | "town";
+
+export interface IStage {
+  type: stageTypes;
+}
+
+export type screenTypes = "overview" | "stage";
+
+export interface IGameState {
+  stage: number;
+  screen: screenTypes;
+  stages: IStage[];
+  stacks: IStack[];
+  cards: ICard[];
+}
+
+export const initialState: IGameState = {
+  stage: 0,
+  screen: "overview",
+  stages: [],
+  stacks: [],
+  cards: [],
+};
+
+// Action interfaces
 
 export enum ACTION {
-  SPAWN_CARD,
-  REMOVE_CARD,
-  MOVE_CARD,
-  FLIP_CARD,
-  FLIP_STACK,
-  REORDER_CARD,
-  SHUFFLE_STACK,
+  SET_STAGE,
+  SET_SCREEN,
 }
 
-interface IActionSpawnCard {
-  type: ACTION.SPAWN_CARD;
-  card: ICard;
+export interface ISetStageAction {
+  type: ACTION.SET_STAGE;
+  stage: number;
 }
 
-interface IActionRemoveCard {
-  type: ACTION.REMOVE_CARD;
-  cardId: CardId;
+export interface ISetScreenAction {
+  type: ACTION.SET_SCREEN;
+  screen: screenTypes;
 }
 
-interface IActionMoveCard {
-  type: ACTION.MOVE_CARD;
-  cardId: CardId;
-  stackId: StackId;
+export type IAction = ISetStageAction | ISetScreenAction;
+
+// Actions
+
+export function setStage(stage: number): ISetStageAction {
+  return {
+    type: ACTION.SET_STAGE,
+    stage,
+  };
 }
 
-interface IActionFlipCard {
-  type: ACTION.FLIP_CARD;
-  cardId: CardId;
-  facing: FACE;
+export function setScreen(screen: screenTypes): ISetScreenAction {
+  return {
+    type: ACTION.SET_SCREEN,
+    screen,
+  };
 }
 
-interface IActionFlipStack {
-  type: ACTION.FLIP_STACK;
-  stackId: StackId;
-  facing: FACE;
-}
+// Reducer
 
-interface IActionReorderCard {
-  type: ACTION.REORDER_CARD;
-  stackId: StackId;
-  oldIndex: number;
-  newIndex: number;
-}
-
-interface IActionShuffleStack {
-  type: ACTION.SHUFFLE_STACK;
-  stackId: StackId;
-}
-
-type IAction =
-  | IActionSpawnCard
-  | IActionRemoveCard
-  | IActionMoveCard
-  | IActionFlipCard
-  | IActionFlipStack
-  | IActionReorderCard
-  | IActionShuffleStack;
-export const reducer = (state = initialState, action: IAction) => {
+export const gameReducer = (
+  state = initialState,
+  action: IAction
+): IGameState => {
   switch (action.type) {
-    case ACTION.SPAWN_CARD: {
-      let cards = state.cards.slice();
-      cards.push(Card(action.card));
+    case ACTION.SET_STAGE:
       return {
         ...state,
-        cards,
+        stage: action.stage,
       };
-    }
-    case ACTION.REMOVE_CARD: {
+    case ACTION.SET_SCREEN:
       return {
         ...state,
-        stacks: state.stacks.map((stack: IStack) => {
-          return {
-            ...stack,
-            cards: stack.cards.filter((id: CardId) => id !== action.cardId),
-          };
-        }),
-        cards: state.cards.filter((card: ICard) => card.id !== action.cardId),
+        screen: action.screen,
       };
-    }
-    case ACTION.MOVE_CARD: {
-      return {
-        ...state,
-        stacks: state.stacks.map((stack: IStack) => {
-          let cards = stack.cards.filter((id: CardId) => {
-            return id !== action.cardId;
-          });
-          if (action.stackId === stack.id) {
-            cards.push(action.cardId);
-          }
-          return {
-            ...stack,
-            cards,
-          };
-        }),
-      };
-    }
-    case ACTION.FLIP_CARD: {
-      return {
-        ...state,
-        cards: state.cards.map((card: ICard) => {
-          if (card.id !== action.cardId) {
-            return card;
-          } else {
-            return {
-              ...card,
-              facing: action.facing,
-            };
-          }
-        }),
-      };
-    }
-    case ACTION.FLIP_STACK: {
-      let cardsToFlip: CardId[] = [];
-      state.stacks.forEach((stack: IStack) => {
-        if (action.stackId === stack.id) {
-          cardsToFlip = stack.cards;
-        }
-      });
-      return {
-        ...state,
-        cards: state.cards.map((card: ICard) => {
-          if (cardsToFlip.includes(card.id)) {
-            return {
-              ...card,
-              facing: action.facing,
-            };
-          } else {
-            return card;
-          }
-        }),
-      };
-    }
-    case ACTION.REORDER_CARD: {
-      return {
-        ...state,
-        stacks: state.stacks.map((stack: IStack) => {
-          return {
-            ...stack,
-            cards:
-              stack.id === action.stackId
-                ? array_move(stack.cards, action.oldIndex, action.newIndex)
-                : stack.cards,
-          };
-        }),
-      };
-    }
-    case ACTION.SHUFFLE_STACK: {
-      return {
-        ...state,
-        stacks: state.stacks.map((stack: IStack) => {
-          return {
-            ...stack,
-            cards:
-              stack.id === action.stackId
-                ? array_shuffle(stack.cards)
-                : stack.cards,
-          };
-        }),
-      };
-    }
     default:
       return state;
   }

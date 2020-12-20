@@ -7,11 +7,6 @@ export enum FACE {
   DOWN,
 }
 
-export interface ICard {
-  id: CardId;
-  facing: FACE;
-}
-
 // Stack
 
 export type StackId = string;
@@ -44,13 +39,6 @@ export interface IStackFan extends IStack {
 }
 
 export type IStackAny = IStackPile | IStackCarousel | IStackGrid | IStackFan;
-
-// Store
-
-export interface IState {
-  stacks: IStack[];
-  cards: ICard[];
-}
 
 // Component Helpers
 

@@ -2,7 +2,7 @@ import React from "react";
 import { FunctionComponent } from "react";
 import "./Board.css";
 import { DefaultCardSize, ISize, IStackAny, StackId } from "../game/schema";
-import { CardProps } from "./Card/Card";
+import { ICard } from "../game/reducer";
 
 export interface BoardProps {
   children?: any;
@@ -47,7 +47,7 @@ export const Board: FunctionComponent<BoardProps> = ({ children, size }) => {
 };
 
 function calculateCardPropsForStack(
-  card: CardProps,
+  card: ICard,
   stack: IStackAny,
   boardSize: ISize,
   stackCount: number
@@ -57,7 +57,6 @@ function calculateCardPropsForStack(
 
   const cardSize = calculateCardSizeForStack(stack, stackCount);
   const cardHeight = cardSize.width * stackWidth * (cardSize as any).ratio;
-  console.log(cardHeight);
 
   const offset = {
     width: 0,

@@ -1,21 +1,7 @@
 import { FunctionComponent, ReactElement } from "react";
 import { FACE, ISize, DefaultSize } from "../../game/schema";
 
-export interface CardProps {
-  children?:
-    | ReactElement<FrontProps | BackProps>
-    | ReactElement<FrontProps | BackProps>[];
-  facing: FACE;
-  order: number;
-  position?: ISize;
-  size?: ISize;
-  boardSize?: ISize;
-  label: string;
-  description: string;
-  onClick: any;
-}
-
-export const Card: FunctionComponent<CardProps> = ({
+export const Card: FunctionComponent<any> = ({
   children,
   facing,
   order,
